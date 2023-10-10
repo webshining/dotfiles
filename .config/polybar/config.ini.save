@@ -1,0 +1,83 @@
+include-file = ~/.config/polybar/colors.ini
+include-file = ~/.config/polybar/modules.ini
+
+[bar/left]
+width = 260
+height = 24pt
+
+radius = 12
+
+offset-x = 10
+offset-y = 5
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+padding-left = 1
+padding-right = 1
+
+font-0 = JetBrains Mono:style=Regular:size=10;2
+font-1 = Font Awesome 6 Brands:style=Regular:size=11;2
+font-2 = Font Awesome 6 Free:style=Regular:size=11;2
+font-3 = Font Awesome 6 Free:style=Solid:size=11;2
+
+modules-center = xwindow batery
+
+enable-ipc = true
+wm-restack = bspwm
+
+[bar/center]
+width = 300
+height = 24pt
+
+radius = 12
+
+offset-x = 810
+offset-y = 5
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+padding-left = 1
+padding-right = 1
+
+font-0 = JetBrains Mono:style=Regular:size=10;2
+font-1 = Font Awesome 6 Brands:style=Regular:size=11;2
+font-2 = Font Awesome 6 Free:style=Regular:size=11;2
+font-3 = Font Awesome 6 Free:style=Solid:size=11;2
+
+modules-center = xworkspaces
+
+enable-ipc = true
+wm-restack = bspwm
+
+[bar/right]
+width = 400
+height = 24pt
+
+radius = 12
+
+offset-x = 1510
+offset-y = 5
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+padding-left = 1
+padding-right = 1
+
+font-0 = JetBrains Mono:style=Regular:size=10;2
+font-1 = Font Awesome 6 Brands:style=Regular:size=11;2
+font-2 = Font Awesome 6 Free:style=Regular:size=11;2
+font-3 = Font Awesome 6 Free:style=Solid:size=11;2
+
+module-margin = 1
+
+modules-center = pulseaudio xkeyboard memory cpu date
+
+enable-ipc = true
+wm-restack = bspwm
+
+[settings]
+screenchange-reload = true
+pseudo-transparency = true
