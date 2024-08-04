@@ -31,7 +31,7 @@ fi
 # ---------------------------------------------- #
 ##################################################
 
-dependencies=(git alacritty picom polybar bspwm sxhkd rofi nitrogen xorg-xsetroot sddm lxsession-gtk3 flameshot xdg-user-dirs)
+dependencies=(acpi git alacritty picom polybar bspwm sxhkd rofi nitrogen xorg-xsetroot sddm lxsession-gtk3 flameshot xdg-user-dirs)
 
 is_installed() {
     pacman -Q "$1" &> /dev/null
