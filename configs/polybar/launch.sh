@@ -3,7 +3,8 @@
 killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
-polybar left &
+polybar workspaces &
 polybar tray &
 polybar stats &
-polybar right &
+polybar layout &
+polybar volume &

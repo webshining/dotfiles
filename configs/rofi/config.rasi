@@ -1,5 +1,5 @@
 configuration{
-    modes: "drun,ssh";
+    modi: "drun,ssh";
     font: "JetBrainsMono NF 12";
 
     show-icons: true;
