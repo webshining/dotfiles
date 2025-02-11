@@ -1,0 +1,17 @@
+#!/bin/sh
+workspaces() {
+
+wss=()
+for workspace in $(bspc query -D --names); do
+    occupied=$(bspc query -N -d $workspace > /dev/null && echo true || echo false)
+    wss+=("{\"name\":$workspace,\"occupied\":$occupied}")
+done
+
+echo "[${wss[*]}]" | sed 's/ /,/g'
+
+}
+
+workspaces
+bspc subscribe desktop node | while read -r _ ; do
+    workspaces
+done

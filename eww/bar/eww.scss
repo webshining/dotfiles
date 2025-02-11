@@ -1,0 +1,27 @@
+* {
+    all: unset;
+}
+
+.bar {
+    padding: 5px 10px;
+
+    background: #250838;
+    border-radius: 8px;
+    color: #5e5f75;
+}
+
+.widgets {
+    &__workspaces {
+        &_button {
+            padding: 0 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            &.test {
+                color: #c5c8c6;
+            }
+            // background-color: red;
+        }
+    }
+    &__player {
+    }
+}
