@@ -1,0 +1,57 @@
+#!/bin/sh
+
+get_occupied() {
+    local occupied=()
+    for monitor in $(bspc query -M --names); do
+        local monitor_data=$(bspc query -T -m "$monitor" | jq -r '
+            .desktops[] | 
+            select(.root != null) | .name
+        ')
+        occupied+=($monitor_data)
+    done
+    echo ${occupied[*]}
+}
+
+get_focused() {
+    local focused=()
+    for monitor in $(bspc query -M --names); do
+        local monitor_data=$(bspc query -T -m "$monitor" | jq -r '
+            .desktops[] | 
+            select(.root != null) |
+            select((.root.client != null and .root.client.shown == true) or 
+                   (.root.firstChild != null and .root.firstChild.client.shown == true) or
+                   (.root.secondChild != null and .root.secondChild.client.shown == true)) | 
+            .name
+        ')
+        focused+=($monitor_data)
+    done
+    focused+=($(bspc query -D -d focused --names))
+    echo ${focused[*]}
+}
+
+workspaces() {
+    local wss=()
+    local occupied=$(get_occupied)
+    local focused=$(get_focused)
+
+    for workspace in $(bspc query -D --names); do
+        local is_occupied=false
+        local is_focused=false
+
+        if echo "$occupied" | grep -qw "$workspace"; then
+            is_occupied=true
+        fi
+        if echo "$focused" | grep -qw "$workspace"; then
+            is_focused=true
+        fi
+        
+        wss+=("{\"name\":\"$workspace\",\"occupied\":$is_occupied,\"focused\":$is_focused}")
+    done
+    
+    echo "[${wss[*]}]" | sed 's/ /,/g'
+}
+
+workspaces
+bspc subscribe desktop node | while read -r _ ; do
+    workspaces
+done

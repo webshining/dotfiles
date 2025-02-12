@@ -1,0 +1,30 @@
+(include "./widgets.yuck")
+
+
+(defwidget left[]
+    (box :orientation "h"
+        (workspaces)))
+(defwidget center[]
+    (box :orientation "h"
+        (player)))
+(defwidget right[]
+    (box :orientation "h"
+        ""))
+(defwidget bar []
+    (centerbox :class "bar"
+               :orientation "h"
+        (left)
+        (center)
+        (right)))
+
+(defwindow bar :monitor "<primary>"
+               :geometry (geometry :x "0%"
+                                   :y "5px"
+                                   :width "98%"
+                                   :height "28px"
+                                   :anchor "top center")
+               :stacking "fg"
+               :reserve (struts :distance "35px" :side "top")
+               :windowtype "dock"
+               :wm-ignore false
+        (bar))

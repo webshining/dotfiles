@@ -1,0 +1,26 @@
+(deflisten music :initial ""
+    `playerctl --follow metadata --format "{{title}} - {{artist}}"`)
+(deflisten workspaces :initial "[]"
+    `scripts/workspaces`)
+
+
+(defwidget workspaces []
+    (box :class "widgets__workspaces"
+         :orientation "h"
+         :space-evenly false
+        (for i in workspaces
+            (label :class "widgets__workspaces_button ${i.occupied ? 'occupied' : ''} ${i.focused ? 'focused' : ''}"
+                   :onclick "bspc desktop -f ${i.name}" 
+                   :text {i.name}))))
+
+(defwidget player []
+    (box :class "widgets__player"
+            :orientation "h"
+        music))
+
+(defwidget tray []
+    (systray :class "widgets__tray"
+             :halign "center"
+             :orientation "h"
+             :spacing 10
+             :icon-size 18))
