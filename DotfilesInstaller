@@ -31,7 +31,7 @@ fi
 # ---------------------------------------------- #
 ##################################################
 
-dependencies=(acpi git alacritty picom polybar bspwm sxhkd rofi feh xorg-xsetroot xorg-xrandr sddm lxsession-gtk3 flameshot xdg-user-dirs)
+dependencies=(acpi git alacritty picom polybar bspwm sxhkd rofi feh xorg-xsetroot xorg-xrandr sddm lxsession-gtk3 flameshot xdg-user-dirs jq playerctl)
 
 is_installed() {
     pacman -Q "$1" &> /dev/null
