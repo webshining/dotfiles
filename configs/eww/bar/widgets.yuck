@@ -2,22 +2,35 @@
     `playerctl --follow metadata --format "{{title}} - {{artist}}"`)
 (deflisten workspaces :initial "[]"
     `scripts/workspaces`)
+(defpoll mem :interval "5s"
+    `free | awk '/^Mem/ {print int($3/$2 * 100.0)}'`)
+(defpoll date :interval "1s"
+    `date +'%H:%M'`)
 
 
+(defwidget date []
+    (box :class "widgets__date"
+         :orientation "h"
+         :space-evenly false
+         (label :text date)))
+(defwidget mem []
+    (box :class "widgets__mem"
+         :orientation "h"
+         :space-evenly false
+        (label :text "${mem} ")))
 (defwidget workspaces []
     (box :class "widgets__workspaces"
          :orientation "h"
          :space-evenly false
+         :spacing 15
         (for i in workspaces
             (label :class "widgets__workspaces_button ${i.occupied ? 'occupied' : ''} ${i.focused ? 'focused' : ''}"
                    :onclick "bspc desktop -f ${i.name}" 
                    :text {i.name}))))
-
 (defwidget player []
     (box :class "widgets__player"
             :orientation "h"
         music))
-
 (defwidget tray []
     (systray :class "widgets__tray"
              :halign "center"

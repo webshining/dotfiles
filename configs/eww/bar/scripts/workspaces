@@ -25,7 +25,7 @@ get_focused() {
         ')
         focused+=($monitor_data)
     done
-    focused+=($(bspc query -D -d focused --names))
+    focused+=($(bspc query -D -d focused --names))s
     echo ${focused[*]}
 }
 

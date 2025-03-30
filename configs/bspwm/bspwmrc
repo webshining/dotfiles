@@ -6,27 +6,18 @@
 
 sxhkd &
 picom &
-feh --bg-scale ~/Pictures/Wallpapers/background.jpg &
-~/.config/polybar/launch.sh &
+feh --bg-scale ~/Pictures/Wallpapers/LEP.png &
+eww -c ~/.config/eww/bar open bar
 xsetroot -cursor_name left_ptr &
 /usr/bin/lxpolkit &
 flameshot &
-gwe --hide-window &
 
 ######################################################
 #----------------------Workspace---------------------#
 ######################################################
 
-bspc monitor HDMI-0 -d		    1 2
-bspc monitor DP-0   -d		    3 4 5 6
-#bspc monitor -d			1 2 3 4 5 6
-
-######################################################
-#----------------------Monitors----------------------#
-######################################################
-
-xrandr --output DP-0 --mode 1920x1080 --rate 143.61 --primary --pos 1920x0
-xrandr --output HDMI-0 --mode 1920x1080 --rate 75.00 --pos 0x235
+bspc monitor HDMI-0 -d			1 2
+bspc monitor DP-4 -d			3 4 5 6
 
 ######################################################
 #-----------------------Config-----------------------#

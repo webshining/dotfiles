@@ -1,13 +1,8 @@
-<svg version="1.1" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
  <defs>
-  <style id="current-color-scheme" type="text/css">.ColorScheme-Text {
-        color:#FFFFFF;
-      }</style>
+  <style id="current-color-scheme" type="text/css">
+   .ColorScheme-Text { color:#f8f8f2; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
  </defs>
- <g class="ColorScheme-Text" fill="currentColor">
-  <circle cx="6" cy="11" r="1" class="ColorScheme-Text" fill="currentColor"/>
-  <circle cx="11" cy="11" r="1" class="ColorScheme-Text" fill="currentColor"/>
-  <circle cx="16" cy="11" r="1" class="ColorScheme-Text" fill="currentColor"/>
-  <path d="m10.99 2a9 9 0 0 0-8.9902 9 9 9 0 0 0 9 9 9 9 0 0 0 9-9 9 9 0 0 0-9-9 9 9 0 0 0-0.009766 0zm0.009766 1a8 8 0 0 1 8 8 8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8z" class="ColorScheme-Text" fill="currentColor"/>
- </g>
+ <path style="fill:currentColor" class="ColorScheme-Text" d="M 7 3 L 7 7 L 3 7 L 3 9 L 7 9 L 7 13 L 9 13 L 9 9 L 13 9 L 13 7 L 9 7 L 9 3 L 7 3 z" transform="translate(3 3)"/>
 </svg>

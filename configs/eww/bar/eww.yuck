@@ -3,25 +3,30 @@
 
 (defwidget left[]
     (box :orientation "h"
+         :halign "start"
         (workspaces)))
 (defwidget center[]
     (box :orientation "h"
+         :halign "center"
         (player)))
 (defwidget right[]
     (box :orientation "h"
-        ""))
+         :halign "end"
+        (mem)
+        (date)))
 (defwidget bar []
-    (centerbox :class "bar"
-               :orientation "h"
-        (left)
-        (center)
-        (right)))
+    (box :orientation "h"
+         :class "bar"
+        (centerbox :class "bar_content"
+                   :orientation "h"
+            (left)
+            (center)
+            (right))))
 
 (defwindow bar :monitor "<primary>"
                :geometry (geometry :x "0%"
                                    :y "5px"
-                                   :width "98%"
-                                   :height "28px"
+                                   :width "100%"
                                    :anchor "top center")
                :stacking "fg"
                :reserve (struts :distance "35px" :side "top")

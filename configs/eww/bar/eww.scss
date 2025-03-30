@@ -1,31 +1,26 @@
 * {
-    all: unset;
-    font-family: "Minecraft", "Minecraft Rus", feather;
-    font-size: 16px;
+	all: unset;
+	font-family: "Hack Nerd Font Mono", feather;
+	font-size: 16px;
 }
 
 .bar {
-    background: #250838;
-    color: #5e5f75;
-    border-radius: 8px;
+	color: #5e5f75;
+	padding: 0 15px;
 }
 
 .widgets {
-    &__workspaces {
-        &_button {
-            margin-left: 15px;
-
-            &.focused,
-            &.occupied {
-                color: #c5c8c6;
-            }
-            &.focused {
-                text-shadow: 0 0 3px #ff79ff;
-            }
-        }
-    }
-    &__player {
-    }
-    &__tray {
-    }
+	&__workspaces {
+		&_button {
+			font-family: "Minecraft";
+			font-size: 14px;
+			&.focused,
+			&.occupied {
+				color: #c5c8c6;
+			}
+			&.focused {
+				text-shadow: 0 0 3px #6f6dff;
+			}
+		}
+	}
 }
